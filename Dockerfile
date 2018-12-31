@@ -12,7 +12,7 @@ ENV LC_MESSAGES C
 #################
 RUN apt update && \
     apt -y dist-upgrade && \
-    apt -y install locales dumb-init && \
+    apt -y install locales && \
     apt update && \
     echo "Europe/Berlin" > /etc/timezone && \
     localedef -i de_DE -c -f UTF-8 -A /usr/share/locale/locale.alias de_DE.UTF-8 && \
