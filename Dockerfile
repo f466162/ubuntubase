@@ -19,4 +19,3 @@ RUN apt update && \
     apt -y purge bzip2 && \
     apt -y autoremove && \
     apt -y autoclean
-
