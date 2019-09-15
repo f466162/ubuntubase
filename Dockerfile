@@ -10,12 +10,11 @@ ENV LC_MESSAGES C
 #################
 # System
 #################
-RUN apt update && \
-    apt -y dist-upgrade && \
-    apt -y install locales && \
-    apt update && \
+RUN apt-get update && \
+    apt-get -y dist-upgrade && \
+    apt-get -y install locales curl jq && \
     echo "Europe/Berlin" > /etc/timezone && \
     localedef -i de_DE -c -f UTF-8 -A /usr/share/locale/locale.alias de_DE.UTF-8 && \
-    apt -y purge bzip2 && \
-    apt -y autoremove && \
-    apt -y autoclean
+    apt-get -y purge bzip2 && \
+    apt-get -y autoremove && \
+    apt-get -y autoclean
